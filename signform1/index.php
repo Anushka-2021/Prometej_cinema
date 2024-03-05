@@ -1,12 +1,26 @@
 <?php
+session_start();
+if(isset($_GET['exit'])){
+  session_unset();
+  session_destroy();
+  ob_start();
+  header("refresh: 3, url=http://kr8/");
+  ob_end_clean();
+}
 
-if(isset($_GET['signinlogin'])){
+else if(isset($_GET['signinlogin'])){
   ob_start();
   $signin_login = $_GET['signinlogin'];
   $signin_password = $_GET['signinpassword'];
-  if (!mysqli_connect("localhost", $signin_login, $signin_password, "kr_apge")){
-    echo "sad";
+  try {
+    mysqli_connect("localhost", $signin_login, $signin_password, "kr_apge");
+  } catch (Exception $e) {
+    session_unset();
+    session_destroy();
+    echo "Not today..";
+    header("refresh: 0, url=http://kr8/");
   }
+ 
   $link = mysqli_connect("localhost", $signin_login, $signin_password, "kr_apge") or die("not now");
     
   if($link == FALSE){
@@ -14,9 +28,10 @@ if(isset($_GET['signinlogin'])){
         die("Something's wrong with your access :(");
     }    
     else {
-        session_start();
+      //  session_start();
         $_SESSION['signin_login'] = $signin_login;
         $_SESSION['signin_password'] = $signin_password;
+        $_SESSION['stat'] = 'director'; //дописать нормальное
         $query = 'SELECT * FROM `sessions`';
         $result = mysqli_query($link, $query);
         echo $_SESSION['signin_login'];
@@ -26,7 +41,7 @@ if(isset($_GET['signinlogin'])){
   ob_end_clean();
  
 }
-else {
+else if(!isset($_SESSION['signin_login'])){
   echo '<!doctype html>
     <html lang="en">
       <head>
@@ -133,5 +148,26 @@ else {
 
         </body>
     </html>';
+}
+else {
+  echo '
+        <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Page</title>
+            </head>
+            <body>
+                <body>
+                    <br>You are already in as '.$_SESSION['signin_login'].' , status: '.$_SESSION['stat'].'<br>
+                    <br><a href="http://kr8/">Menu</a>
+                    <br><a href="http://kr8/movies">Movies</a>
+                    <br><a href="?exit=true">Exit</a>
+                </body>
+            </body>
+        </html>
+    ';
 }
 ?>
