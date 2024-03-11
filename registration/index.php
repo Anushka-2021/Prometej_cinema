@@ -11,7 +11,7 @@
 <div class="container mregister">
     <div id="login">
         <h1>Регистрация</h1>
-        <form action="register.php" id="registerform" method="post" name="registerform">
+        <form action="index.php" id="registerform" method="post" name="registerform">
             <p><label for="user_login">Полное имя<br>
                     <input class="input" id="full_name" name="full_name"size="32"  type="text" value=""></label></p>
             <p><label for="user_pass">Должность<br>
@@ -50,8 +50,8 @@ if(isset($_POST["register"])){
             $result=mysqli_query($con, $sql_usr_table);
             if($result){
                 $message = "Account Successfully Created";
-                $sql_cash_cashiers = "INSERT INTO cashiers (name, post)
-	                                    VALUES('$full_name', '$post')";
+                $sql_cash_cashiers = "INSERT INTO cashiers (name, post, username)
+	                                    VALUES('$full_name', '$post', '$username')";
                 $result_cash=mysqli_query($con, $sql_cash_cashiers);
                 $sql_create_user_db = "CREATE USER '$username'@'localhost' IDENTIFIED BY '$password'";
                 $result_create_user = mysqli_query($con, $sql_create_user_db);
