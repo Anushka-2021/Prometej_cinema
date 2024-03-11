@@ -37,7 +37,7 @@ else if(isset($_GET['signinlogin'])){
         echo $_SESSION['signin_login'];
     }
     
-  header("refresh: 5, url=http://kr8/page/index.php");
+  header("refresh: 3, url=http://kr8/index.php");
   ob_end_clean();
  
 }
