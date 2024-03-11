@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_start();
 if(isset($_GET['exit'])){
   session_unset();
   session_destroy();
@@ -19,9 +18,8 @@ echo "<!DOCTYPE html>
 </head>
 <body>
 	<h1 id='t1'>Добро пожаловать в наш кинотеатр!</h1>
-	<h2 id='t2'>Open Server Panel работает ;-)</h2>
+    <a href='http://kr8/registration'>Add new worker</a>
 	<a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
-    <a href='https://kr8/buy_ticket/' id='t3'>Оформить покупку</a>
     <a href='?exit=true'>Выйти</a>
 </body>
 
@@ -39,7 +37,6 @@ echo "<!DOCTYPE html>
 </head>
 <body>
 	<h1 id='t1'>Добро пожаловать в наш кинотеатр!</h1>
-	<h2 id='t2'>Open Server Panel работает ;-)</h2>
 	<a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
     <a href='https://kr8/signform1/' id='t3'>Войти</a>
 </body>
