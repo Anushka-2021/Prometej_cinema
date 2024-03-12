@@ -19,6 +19,7 @@ table{
     margin-right: 50px;
     margin-top: 50px;
 
+
 }
 .mupdate {
     margin: 80px auto 0;
@@ -26,6 +27,11 @@ table{
 .bloccenter {
     width: 50%;  /* Указывается необходимая ширина */
     margin: 0 auto;
+}
+#login {
+    width: 320px;
+    margin: auto;
+    padding-bottom: 15px;
 }
 /*= КОНТЕЙНЕРЫ
 --------------------------------------------------------*/
@@ -37,7 +43,17 @@ table{
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
 }
-
+.containerupd {
+    padding: 25px 16px 25px 10px;
+    font-weight: 400;
+    overflow: hidden;
+    width: 350px;
+    height: auto;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
 .container h1 {
     color: #777;
     text-align: center;
@@ -45,7 +61,14 @@ table{
     font-weight: 300;
     margin-top: 13px;
 }
-.container form .input,.container input[type=text],.container input[type=password],.container input[type=e] {
+.containerupd h1 {
+    color: #777;
+    text-align: center;
+    border: 1px dashed #777;
+    font-weight: 300;
+    margin-top: 13px;
+}
+.containerupd form .input,.container input[type=text],.container input[type=password],.container input[type=e] {
     background: #fbfbfb;
     font-size: 24px;
     line-height: 1;
@@ -56,7 +79,7 @@ table{
     border: 1px solid #d9d9d9;
 }
 
-.container form .input:focus {
+.containerupd form .input:focus {
     border: 1px solid #f58220;
     -webkit-box-shadow: 0 0 3px 0 rgba(245,130,32,0.75);
     -moz-box-shadow: 0 0 3px 0 rgba(245,130,32,0.75);

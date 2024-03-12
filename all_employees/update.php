@@ -9,8 +9,12 @@ if($conn->connect_error){
 <head>
     <title>Обновление</title>
     <meta charset="utf-8" />
+    <link href="css/style.css" media="screen" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="containerupd mupdate">
+    <div class="login">
 <?php
 // если запрос GET
 if($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["cashier_id"]))
@@ -24,16 +28,17 @@ if($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["cashier_id"]))
                 $post = $row["post"];
                 $status = $row["status"];
             }
-            echo "<h3>Обновление пользователя</h3>
-                <form method='post'>
-                    <input type='hidden' name='cashier_id' value='$userid' />
+            echo "
+                    <h1>Обновление пользователя</h1>
+                    <form method='post'>
+                    <input class='input' type='hidden' name='cashier_id' value='$userid' />
                     <p>Имя:
-                    <input type='text' name='name' value='$name' /></p>
+                    <input class='input' type='text' name='name' value='$name' /></p>
                     <p>Должность:
-                    <input type='text' name='post' value='$post' /></p>
+                    <input class='input' type='text' name='post' value='$post' /></p>
                     <p>Статус:
-                    <input type='number' name='status' value='$status' /></p>
-                    <input type='submit' value='Сохранить'>
+                    <input class='input' type='number' name='status' value='$status' /></p>
+                    <input class='button' type='submit' value='Сохранить'>
             </form>";
         }
         else{
@@ -62,5 +67,7 @@ else{
 }
 $conn->close();
 ?>
+</div>
+</div>
 </body>
 </html>
