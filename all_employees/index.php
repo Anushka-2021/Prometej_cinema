@@ -3,9 +3,13 @@
 <head>
     <title>Список сотрудников</title>
     <meta charset="utf-8" />
+    <link href="css/style.css" media="screen" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel='stylesheet' type='text/css'>
 </head>
 <body>
-<h2>Список сотрудников</h2>
+<div class="container mlistempl">
+<h1>Список сотрудников</h1>
+
 <?php
 $conn = new mysqli("localhost", "root", "", "kr_apge");
 if($conn->connect_error){
@@ -20,7 +24,7 @@ if($result = $conn->query($sql)){
         echo "<td>" . $row["name"] . "</td>";
         echo "<td>" . $row["post"] . "</td>";
         echo "<td>" . $row["status"] . "</td>";
-        echo "<td><a href='update.php?cashier_id=" . $row["cashier_id"] . "'>Изменить</a></td>";
+        echo "<td><a href='update.php?cashier_id=" . $row["cashier_id"] . "'> <img src='images/update.png' width = 25px> </a></td>";
         echo "</tr>";
     }
     echo "</table>";
@@ -30,5 +34,6 @@ if($result = $conn->query($sql)){
 }
 $conn->close();
 ?>
+</div>
 </body>
 </html>
