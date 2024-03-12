@@ -22,13 +22,23 @@ else if(isset($_GET['signinlogin'])){
   }
  
   $link = mysqli_connect("localhost", $signin_login, $signin_password, "kr_apge") or die("not now");
-    
   if($link == FALSE){
-     //   echo mysqli_connect_error();  
         die("Something's wrong with your access :(");
     }    
     else {
-      //  session_start();
+        session_start();
+      $link2 = mysqli_connect("localhost", 'root', '', "kr_apge") or die("not now");
+      $query2 = 'SELECT post as post FROM cashiers WHERE username = "'.$signin_login.'"';
+      $result2 = mysqli_query($link2, $query2);
+    
+      foreach($result2 as $i){
+        foreach($i as $ii){
+          $_SESSION['stat'] = $ii; //дописать нормальное
+        }
+      }
+    
+        $_SESSION['signin_login'] = $signin_login;
+        $_SESSION['signin_password'] = $signin_password;
         $_SESSION['signin_login'] = $signin_login;
         $_SESSION['signin_password'] = $signin_password;
         $_SESSION['stat'] = 'director'; //дописать нормальное

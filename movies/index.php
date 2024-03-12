@@ -73,7 +73,9 @@
                 $result1 = mysqli_query($link, $query1);
                 $a = mysqli_fetch_array($result1, MYSQLI_ASSOC);
                 $client_id = $_GET['client_id'];
-                echo 'sdfgerf';
+                ob_start();
+                header("refresh: 3, url=http://kr8/movies");
+                ob_end_clean();
             }
             else{
                 $client_id = Null;
