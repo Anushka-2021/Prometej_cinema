@@ -15,12 +15,14 @@ echo "<!DOCTYPE html>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <title>Добро пожаловать!</title>
+    <link href='css/style.css' media='screen' rel='stylesheet'>
 </head>
 <body>
-	<h1 id='t1'>Добро пожаловать в наш кинотеатр!</h1>
-    <a href='http://kr8/registration'>Add new worker</a>
-	<a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
-    <a href='?exit=true'>Выйти</a>
+	<h1 id='t1'>Корпоративный сайт кинотеатра Prometheus</h1>
+    <a class='button' href='http://kr8/registration'>Add new worker</a>
+	<a class='button' href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
+    <a class='button' href='?exit=true'>Выйти</a><br>
+    
 </body>
 
 </html>";
@@ -38,7 +40,7 @@ echo "<!DOCTYPE html>
 <body>
 	<h1 id='t1'>Добро пожаловать в наш кинотеатр!</h1>
 	<a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
-    <a href='https://kr8/signform1/' id='t3'>Войти</a>
+    <a href='https://kr8/signform/' id='t3'>Войти</a>
 </body>
 
 </html>";}
