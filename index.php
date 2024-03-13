@@ -21,6 +21,7 @@ else if(isset($_SESSION['signin_login'])){
                 <h1 id='t1'>Добро пожаловать в наш кинотеатр!</h1>
                 <a href='http://kr8/registration'>Add new worker</a>
                 <a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
+                <a href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
                 <a href='?exit=true'>Выйти</a>
             </body>
 
@@ -40,6 +41,7 @@ else if(isset($_SESSION['signin_login'])){
             <a href='http://kr8/registration'>Добавить сотрудника</a>
             <a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
             <a href='https://kr8/add_movie/' id='t3'>Добавить фильм</a>
+            <a href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
             <a href='?exit=true'>Выйти</a>
         </body>
 
