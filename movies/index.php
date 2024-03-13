@@ -5,16 +5,18 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <title>Кинотеатр Прометей</title>
+    <link href="css/style.css" media="screen" rel="stylesheet">
 </head>
 <body>
-    <a href='https://kr8/' id='t3'>Меню</a>
+    <div class="top-menu">
+        <a class="button" href='https://kr8/'>Меню</a>
+        <a class='button' href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
+        <a class='button' href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
+        <a class='button' href='?exit=true'>Выйти</a>
+    </div>
 	<h1 id='t1'>Фильмы</h1>
 	<div class='movies'>
 		
-	</div>
-</body>
-</html>
-
 <style>
     .movie{
         border: 2px solid black;
@@ -52,6 +54,10 @@
     .movie-days-in-month{
         border: 1px solid red;
         padding: 5px;
+    }
+    .top-menu{
+        display: inline-flex;
+        gap: 10px;
     }
 </style>
 
@@ -200,20 +206,9 @@
         <br>
         <div class = 'chose_row'>";
             foreach($b as $sss){
-               /* for(i=1; i<=$a['ramount']; i+=1){
-                    
-                    if($sss['row_num'] == i){
-                        if()
-                        echo $sss['row_num'], '<br>';
-                        if
-                    }
-                }*/
                 echo '<a href="?session_id='.$a['sess_id'].'&row='.$sss['row_num'].'&seat='.$sss['seat_num'].'&ready=true">';
                 echo 'Ряд: '.$sss['row_num'], ' место: ', $sss['seat_num'], '<br>';
                 echo '</a>';
-              /*  foreach($sss as $ssss){
-                    echo $ssss.'<br>';
-                }*/
             }
         echo "</div>
         ";
@@ -249,7 +244,7 @@
             $res_sessions = mysqli_query($link, "SELECT *, MONTH(DATE(session_datetime)) AS sess_month, DAY(DATE(session_datetime)) AS sess_day, TIME(session_datetime) AS sess_time, halls.name AS hall_name FROM `sessions` LEFT JOIN halls ON halls.hall_id=sessions.hall_id WHERE movie_id='{$movie_id}'");
             $rs1 = $res_sessions;
             echo '
-                <div class = movie>
+                <div class = "movie">
                     <div class="movie-body-poster">
                         <img src="http://kr8/movies/posters/'.$movie_id.'.jpg" height="100%">
                     </div>
@@ -320,3 +315,7 @@
         echo '</div>';
     }
 ?>
+
+</div>
+</body>
+</html>
