@@ -55,11 +55,15 @@ if(isset($_POST["register"])){
                 $result_cash=mysqli_query($con, $sql_cash_cashiers);
                 $sql_create_user_db = "CREATE USER '$username'@'localhost' IDENTIFIED BY '$password'";
                 $result_create_user = mysqli_query($con, $sql_create_user_db);
-                $sql_privileges1 = "GRANT SELECT, INSERT ON kr_apge.clients TO '".$username."'@'localhost';";
+                $sql_privileges1 = "GRANT SELECT, INSERT, UPDATE ON kr_apge.clients TO '".$username."'@'localhost';";
                 $sql_privileges2 = "GRANT SELECT ON kr_apge.movies TO '".$username."'@'localhost';";
                 $sql_privileges3 = "GRANT SELECT ON kr_apge.sessions TO '".$username."'@'localhost';";
                 $sql_privileges4 = "GRANT SELECT, INSERT ON kr_apge.tickets TO '".$username."'@'localhost';";
-                $sql_privileges5 = "FLUSH PRIVILEGES;";
+                $sql_privileges5 = "GRANT SELECT ON kr_apge.halls TO '".$username."'@'localhost';";
+                $sql_privileges6 = "GRANT SELECT ON kr_apge.cashiers TO '".$username."'@'localhost';";
+                $sql_privileges7 = "GRANT SELECT ON kr_apge.seats TO '".$username."'@'localhost';";
+                $sql_privileges8 = "GRANT SELECT, INSERT ON kr_apge.reserved_seats TO '".$username."'@'localhost';";
+                $sql_privileges9 = "FLUSH PRIVILEGES;";
                 mysqli_query($con, $sql_privileges1);
                 mysqli_query($con, $sql_privileges5);
                 mysqli_query($con, $sql_privileges2);
@@ -68,6 +72,10 @@ if(isset($_POST["register"])){
                 mysqli_query($con, $sql_privileges5);
                 mysqli_query($con, $sql_privileges4);
                 mysqli_query($con, $sql_privileges5);
+                mysqli_query($con, $sql_privileges6);
+                mysqli_query($con, $sql_privileges7);
+                mysqli_query($con, $sql_privileges8);
+                mysqli_query($con, $sql_privileges9);
                 #header( "Location: {$_SERVER['https://kr8/registration/register.php']}", true, 303 );
                 #exit();
             } else {
