@@ -8,6 +8,12 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="top-menu">
+    <a class='button' href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
+    <a class='button' href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
+    <a class='button' href='https://kr8/add_movie/' id='t3'>Добавить фильм</a>
+    <a class='button' href='?exit=true'>Выйти</a>
+</div>
 <div class="container mregister">
     <div id="login">
         <h1>Регистрация</h1>
