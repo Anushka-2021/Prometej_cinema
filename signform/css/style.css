@@ -40,6 +40,10 @@ span {
     color: #777;
 }
 
+.top-menu {
+	display: flex;
+}
+
 /*= КОНТЕЙНЕРЫ
 --------------------------------------------------------*/
 .container {
@@ -104,7 +108,8 @@ span {
 /*= КНОПКИ
 --------------------------------------------------------*/
 
-.button{
+.button,
+.button-right{
     border: solid 1px #da7c0c;
     background: #f78d1d;
     background: -webkit-gradient(linear, left top, leftbottom, from(#faa51a), to(#f47a20));
@@ -117,6 +122,23 @@ span {
     border-radius:4px;
     float: right;
     cursor: pointer;
+    font: 400 17px sans-serif;
+}
+.button-left{
+    border: solid 1px #da7c0c;
+    background: #f78d1d;
+    background: -webkit-gradient(linear, left top, leftbottom, from(#faa51a), to(#f47a20));
+    background: -moz-linear-gradient(top,  #faa51a, #f47a20);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+    color: #fff;
+    padding: 7px 12px;
+    -webkit-border-radius:4px;
+    moz-border-radius:4px;
+    border-radius:4px;
+    float: left;
+    cursor: pointer;
+    text-decoration: none;
+    font: 400 17px sans-serif;
 }
 
 .button:hover{
