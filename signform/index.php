@@ -4,7 +4,7 @@ if(isset($_GET['exit'])){
   session_unset();
   session_destroy();
   ob_start();
-  header("refresh: 1, url=http://kr8/");
+  header("refresh: 0, url=http://kr8/");
   ob_end_clean();
 }
 
@@ -51,27 +51,27 @@ else if(!isset($_SESSION['signin_login'])){
         <title>Авторизация</title>
         <link href="css/style.css" media="screen" rel="stylesheet">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"rel="stylesheet" type="text/css">
-
       </head>
       <body>
- 
-    <div class="container mregister">
-      <form action="#">
-        <h1>Авторизация</h1>
+        <div class="top-menu">
+        </div>
+        <div class="container mregister">
+          <form action="#">
+            <h1>Авторизация</h1>
 
-        
-        <p><label for="floatingInput">Логин<br>
-        <input type="input" class="input" id="floatingInput" placeholder="user1234" name="signinlogin">
-        </label>
-        </p>
-          <p><label for="floatingPassword">Пароль<br>
-          <input type="password" class="input" id="floatingPassword" placeholder="password" name="signinpassword">
-          </label></p>
-          
-
-        <button class="button" type="submit">Войти</button>
-      </form>
-    </div>
+            
+            <p><label for="floatingInput">Логин<br>
+            <input type="input" class="input" id="floatingInput" placeholder="user1234" name="signinlogin">
+            </label>
+            </p>
+              <p><label for="floatingPassword">Пароль<br>
+              <input type="password" class="input" id="floatingPassword" placeholder="password" name="signinpassword">
+              </label></p>
+              
+            <a class="button-left" href="https://kr8/">Меню</a>
+            <button class="button-right" type="submit">Войти</button>
+          </form>
+        </div>
 
         </body>
     </html>';
