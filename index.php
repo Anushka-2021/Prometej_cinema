@@ -19,10 +19,19 @@ else if(isset($_SESSION['signin_login'])){
                 <link href='css/style.css' media='screen' rel='stylesheet'>
             </head>
             <body>
-                <h1 id='t1'>Корпоративный сайти кинотеатра Prometheus</h1>
-                <a class='button' href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
-                <a class='button' href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
-                <a class='button' href='?exit=true'>Выйти</a>
+                <header>
+                <div class='wrap-logo'>
+                    <a href='href=http://kr8/' class='logo'>Кинотеатр Prometheus</a>
+                    <img class='round' src='../signform/images/logo.JPG' width = 60px>
+                </div>
+                <nav>
+                    <a class='active' href='http://kr8/'>Главная</a>
+                    <a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
+                    <a href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
+                    <a href='?exit=true'>Выйти</a>
+                </nav>
+                </header>
+            <img class='bcgrnd' src='../signform/images/prometheus.jpeg'>
             </body>
 
             </html>";
@@ -39,12 +48,21 @@ else if(isset($_SESSION['signin_login'])){
             
         </head>
         <body>
-            <h1 id='t1'>Корпоративный сайти кинотеатра Prometheus</h1>
-            <a class='button' href='http://kr8/registration'>Добавить сотрудника</a>
-            <a class='button' href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
-            <a class='button' href='https://kr8/add_movie/' id='t3'>Добавить фильм</a><br><br><br>
-            <a class='button' href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
-            <a class='button' href='?exit=true'>Выйти</a>
+        <header>
+            <div class='wrap-logo'>
+                <a href='href=http://kr8/' class='logo'>Кинотеатр Prometheus</a>
+                <img class='round' src='../signform/images/logo.JPG' width = 60px>
+            </div>
+            <nav>
+                    <a class='active' href='http://kr8/'>Главная</a>
+                    <a href='http://kr8/registration'>Добавить сотрудника</a>
+                    <a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
+                    <a href='https://kr8/add_movie/' id='t3'>Добавить фильм</a><br><br><br>
+                    <a href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
+                    <a href='?exit=true'>Выйти</a>
+            </nav>
+        </header>
+        <img class='bcgrnd' src='../signform/images/prometheus.jpeg'>
         </body>
 
         </html>";
@@ -62,9 +80,17 @@ echo "<!DOCTYPE html>
     <link href='css/style.css' media='screen' rel='stylesheet'>
 </head>
 <body>
-	<h1 id='t1'>Корпоративный сайти кинотеатра Prometheus</h1>
-    <a class='button' href='https://kr8/signform/' id='t3'>Войти</a>
+ <header>
+    <div class='wrap-logo'>
+        <a href='href=http://kr8/' class='logo'>Кинотеатр Prometheus</a>
+        <img class='round' src='../signform/images/logo.JPG' width = 60px>  
+    </div>
+    <nav>
+            <a class='active' href='http://kr8/'>Главная</a>
+            <a href='https://kr8/signform/' id='t3'>Войти</a>
+    </nav>
+</header>
 </body>
-
+<img class='bcgrnd' src='../signform/images/prometheus.jpeg'>
 </html>";}
 ?>
