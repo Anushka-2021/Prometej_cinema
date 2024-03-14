@@ -4,6 +4,7 @@ body {
     background: #efefef;
     font-family: 'Open Sans', sans-serif;
     color: #777;
+    margin: 0;
 }
 
 a {
@@ -154,4 +155,49 @@ footer {
     font-size: 12px;
     text-align: center;
     margin-top: 20px;
+}
+/* ШАПКА*//* ШАПКА*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #faa51a;
+    padding: 20px 10px;
+}
+.wrap-logo {
+    display: flex;
+    align-items: center;
+
+}
+header a {
+    color: #212121;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+header a:hover {
+    background-color: #f47a20;
+    color: #212121;
+}
+
+header a.active {
+    background-color: #f47a20;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+.round {
+    border-radius: 50px; /* Радиус скругления */
+    border: 3px solid white; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
 }
