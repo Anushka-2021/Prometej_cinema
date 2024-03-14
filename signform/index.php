@@ -27,7 +27,7 @@ else if(isset($_GET['signinlogin'])){
         die("Something's wrong with your access :(");
     }    
     else {
-      $query1 = 'SELECT post FROM cashiers';
+      $query1 = 'SELECT post FROM cashiers WHERE username="'.$signin_login.'"';
       $result1 = mysqli_query($link, $query1);
       foreach($result1 as $i){
           $_SESSION['stat'] = $i['post'];
@@ -35,7 +35,6 @@ else if(isset($_GET['signinlogin'])){
         $_SESSION['signin_login'] = $signin_login;
         $_SESSION['signin_password'] = $signin_password;
 
-        //'director'; дописать нормальное
         $query = 'SELECT * FROM `sessions`';
         $result = mysqli_query($link, $query);
         echo $_SESSION['signin_login'];
