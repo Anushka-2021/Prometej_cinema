@@ -13,13 +13,13 @@ if(isset($_GET['exit'])){
     <meta charset = "utf-8" >
     <title > Регистрация сотрудника </title >
     <link href = "css/style.css" media = "screen" rel = "stylesheet" >
-    <link href = 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel = 'stylesheet' type = 'text/css' >
+    <link href = 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel = 'stylesheet' type = 'text/css' >
 </head >
 <body >
 <header>
     <div class='wrap-logo'>
-        <a href='href=http://kr8/' class='logo'>Кинотеатр Prometheus</a>
         <img class='round' src='../signform/images/logo.JPG' width = 60px>
+        <a href='href=http://kr8/' class='logo'>Кинотеатр Prometheus</a>
     </div>
     <nav>
         <a href='http://kr8/'>Главная</a>

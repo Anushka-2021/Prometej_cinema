@@ -1,10 +1,11 @@
 /*= ОБЩИЕ СТИЛИ
 	--------------------------------------------------------*/
 body {
-    background: #efefef;
+    background-image: url("../../signform/images/prometheus2.png");
+    background-size: 100%;
     font-family: 'Open Sans', sans-serif;
     color: #777;
-    margin: 0px;
+    margin: 0;
 }
 
 a {
@@ -38,7 +39,7 @@ span {
 .regtext {
     font-size: 13px;
     margin-top: 26px;
-    color: #777;
+    color: #081a26;
 }
 
 /*= КОНТЕЙНЕРЫ
@@ -53,6 +54,7 @@ span {
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    border-radius: 5%;
 }
 
 #welcome {
@@ -66,7 +68,7 @@ span {
 }
 
 .container h1 {
-    color: #777;
+    color: #081a26;
     text-align: center;
     font-weight: 300;
     border: 1px dashed #777;
@@ -74,7 +76,7 @@ span {
 }
 
 .container label {
-    color: #777;
+    color: #081a26;
     font-size: 14px;
 }
 
@@ -106,8 +108,8 @@ span {
 --------------------------------------------------------*/
 
 .button{
-    border: solid 1px #da7c0c;
-    background: #f78d1d;
+    border: solid 1px #dd6227e8;
+    background: #dd6227e8;
     background: -webkit-gradient(linear, left top, leftbottom, from(#faa51a), to(#f47a20));
     background: -moz-linear-gradient(top,  #faa51a, #f47a20);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
@@ -122,7 +124,7 @@ span {
 }
 
 .button:hover{
-    background: #f47c20;
+    background: #c65600;
     background: -webkit-gradient(linear, left top, leftbottom, from(#f88e11), to(#f06015));
     background: -moz-linear-gradient(top,  #f88e11, #f06015);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
@@ -142,13 +144,14 @@ footer {
 	gap: 10px;
 }
 
-/* ШАПКА*//* ШАПКА*/
+/* ШАПКА*/
 header {
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #faa51a;
+    background-color: #151115;
     padding: 20px 10px;
 }
 .wrap-logo {
@@ -157,25 +160,26 @@ header {
 
 }
 header a {
-    color: #212121;
+    color: #fff;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
+    font-weight: 300;
     border-radius: 4px;
 }
 
 header a.logo {
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 300;
 }
 
 header a:hover {
-    background-color: #f47a20;
+    background-color: #c65712;
     color: #212121;
 }
 
 header a.active {
-    background-color: #f47a20;
+    background-color: #c65712;
 }
 
 nav {
@@ -186,4 +190,9 @@ nav {
     border-radius: 50px; /* Радиус скругления */
     border: 3px solid white; /* Параметры рамки */
     box-shadow: 0 0 7px #666; /* Параметры тени */
+}
+.bcgrnd{
+    width: 100%;
+    height: 100%;
+
 }

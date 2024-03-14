@@ -1,9 +1,11 @@
 /*= ОБЩИЕ СТИЛИ
 	--------------------------------------------------------*/
 body {
-    background: #efefef;
+    background-image: url("../../signform/images/clouds.jpeg");
+    background-size: 100%;
     font-family: 'Open Sans', sans-serif;
     color: #777;
+    margin: 0;
 }
 
 a {
@@ -22,7 +24,9 @@ table{
 
 }
 .mupdate {
-    margin: 80px auto 0;
+    margin-top: 80px;
+    margin-right: 80px;
+    margin-left: 80px;
 }
 .bloccenter {
     width: 50%;  /* Указывается необходимая ширина */
@@ -41,6 +45,7 @@ table{
     text-align: center;
     height: auto;
     background: #fff;
+    border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
 }
 .containerupd {
@@ -119,3 +124,55 @@ footer {
     font-size: 12px;
     text-align: center;
     margin-top: 20px;}
+/* ШАПКА*/
+header {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #151115;
+    padding: 20px 10px;
+}
+.wrap-logo {
+    display: flex;
+    align-items: center;
+
+}
+header a {
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 4px;
+}
+
+header a.logo {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+header a:hover {
+    background-color: #c65712;
+    color: #212121;
+}
+
+header a.active {
+    background-color: #c65712;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+.round {
+    border-radius: 50px; /* Радиус скругления */
+    border: 3px solid white; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+}
+.bcgrnd{
+    width: 100%;
+    height: 100%;
+
+}
