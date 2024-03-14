@@ -133,3 +133,9 @@ footer {
     text-align: center;
     margin-top: 20px;
 }
+/* ПОЛЬЗОВАТЕЛЬСКОЕ
+--------------------------------------------------------*/
+.top-menu{
+	display: inline-flex;
+	gap: 10px;
+}
