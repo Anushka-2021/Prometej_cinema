@@ -37,10 +37,11 @@ h1{
 /* ШАПКА*/
 header {
     display: flex;
+    font-family: 'Open Sans', sans-serif;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #faa51a;
+    background-color: #151115;
     padding: 20px 10px;
 }
 .wrap-logo {
@@ -49,25 +50,26 @@ header {
 
 }
 header a {
-    color: #212121;
+    color: #fff;
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
+    font-weight: 300;
     border-radius: 4px;
 }
 
 header a.logo {
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 300;
 }
 
 header a:hover {
-    background-color: #f47a20;
+    background-color: #c65712;
     color: #212121;
 }
 
 header a.active {
-    background-color: #f47a20;
+    background-color: #c65712;
 }
 
 nav {

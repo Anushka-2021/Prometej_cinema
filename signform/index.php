@@ -45,39 +45,40 @@ else if(isset($_GET['signinlogin'])){
  
 }
 else if(!isset($_SESSION['signin_login'])){
-  echo '<!doctype html>
-    <html lang="en">
+  echo "<!doctype html>
+    <html lang='en'>
       <head>
 
-        <meta charset="utf-8">
-        <meta name="description" content="">
+        <meta charset='utf-8'>
+        <meta name='description' content=''>
         <title>Авторизация</title>
-        <link href="css/style.css" media="screen" rel="stylesheet">
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"rel="stylesheet" type="text/css">
-      </head>
+        <link href='css/style.css' media='screen' rel='stylesheet'>
+        <link href = 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel = 'stylesheet' type = 'text/css' >
+</head>
       <body>
-        <div class="top-menu">
+        <div class='top-menu'>
         </div>
-        <div class="container mregister">
-          <form action="#">
+        <div class='container mregister'>
+            <div id = 'login' >
             <h1>Авторизация</h1>
-
+            <form action='#'>
             
-            <p><label for="floatingInput">Логин<br>
-            <input type="input" class="input" id="floatingInput" placeholder="user1234" name="signinlogin">
+            <p><label for='floatingInput'>Логин<br>
+            <input type='input' class='input' id='floatingInput' placeholder='user1234' name='signinlogin'>
             </label>
             </p>
-              <p><label for="floatingPassword">Пароль<br>
-              <input type="password" class="input" id="floatingPassword" placeholder="password" name="signinpassword">
+              <p><label for='floatingPassword'>Пароль<br>
+              <input type='password' class='input' id='floatingPassword' placeholder='password' name='signinpassword'>
               </label></p>
               
-            <a class="button-left" href="https://kr8/">Меню</a>
-            <button class="button-right" type="submit">Войти</button>
+            <a class='button-left' href='https://kr8/'>Меню</a>
+            <button class='button-right' type='submit'>Войти</button>
           </form>
+          </div>
         </div>
 
         </body>
-    </html>';
+    </html>";
 }
 else {
   echo '
@@ -100,5 +101,4 @@ else {
             </body>
         </html>
     ';
-}
-?>
+} ?>

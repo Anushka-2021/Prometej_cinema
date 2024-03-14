@@ -3,19 +3,26 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Регистрация сотрудника</title>
+    <title>Добавление фильма</title>
     <link href="css/style.css" media="screen" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="top-menu">
-    <a class='button' href='https://kr8/'>Меню</a>
-    <a class='button' href='https://kr8/movies/'>Выбрать фильм</a>
-    <a class='button' href='https://kr8/show_tickets/'>Посмотреть проданные билеты</a>
-    <a class='button' href='https://kr8/registration/'>Добавить сотрудника</a>
-    <a class='button' href='https://kr8/show_movies/'>Посмотреть фильмы</a>
-    <a class='button' href='?exit=true'>Выйти</a>
-</div>
+<header>
+    <div class='wrap-logo'>
+        <img class='round' src='../signform/images/logo.JPG' width = 60px>
+        <a href='href=http://kr8/' class='logo'>Кинотеатр Prometheus</a>
+
+    </div>
+    <nav>
+        <a href='http://kr8/'>Главная</a>
+        <a href='http://kr8/registration'>Добавить сотрудника</a>
+        <a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
+        <a class='active' href='https://kr8/add_movie/' id='t3'>Добавить фильм</a><br><br><br>
+        <a href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
+        <a href='?exit=true'>Выйти</a>
+    </nav>
+</header>
 <div class="container mregister">
     <div id="login">
         <h1>Добавить фильм</h1>
