@@ -5,6 +5,7 @@ if(isset($_GET['exit'])){
     session_destroy();
     ob_start();
     header("refresh: 0, url=http://kr8/");
+    die();
     ob_end_clean();
 }?>
 <!DOCTYPE html>
@@ -14,6 +15,7 @@ if(isset($_GET['exit'])){
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <title>Кинотеатр Прометей</title>
+    <link rel="shortcut icon" href="../../signform/images/logo.jpg" type="image/jpg">
     <link href="css/style.css" media="screen" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel='stylesheet' type='text/css'>
 </head>
@@ -21,12 +23,13 @@ if(isset($_GET['exit'])){
 <header>
     <div class='wrap-logo'>
         <img class='round' src='../signform/images/logo.JPG' width = 60px>
-        <a href='href=http://kr8/' class='logo'>Кинотеатр Prometheus</a>
+        <a href='http://kr8/' class='logo'>Кинотеатр Prometheus</a>
     </div>
     <nav>
         <a href='http://kr8/'>Главная</a>
         <a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
         <a class='active' href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
+        <a href='https://kr8/add_client/' id='t3'>Добавить клиента</a>
         <a href='?exit=true'>Выйти</a>
     </nav>
 </header>

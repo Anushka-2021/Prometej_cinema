@@ -4,7 +4,7 @@ body {
     background-image: url("../../signform/images/clouds.jpeg");
     background-size: 100%;
     font-family: 'Open Sans', sans-serif;
-    color: #777;
+    color: #081a26;
     margin: 0;
 }
 
@@ -27,6 +27,7 @@ table{
     margin-top: 80px;
     margin-right: 80px;
     margin-left: 80px;
+    padding-bottom: 13px;
 }
 .bloccenter {
     width: 50%;  /* Указывается необходимая ширина */
@@ -60,14 +61,14 @@ table{
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
 }
 .container h1 {
-    color: #777;
+    color: #081a26;
     text-align: center;
     border-bottom: 2px solid #f58220;
     font-weight: 300;
     margin-top: 13px;
 }
 .containerupd h1 {
-    color: #777;
+    color: #081a26;
     text-align: center;
     border: 1px dashed #777;
     font-weight: 300;

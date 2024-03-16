@@ -87,11 +87,14 @@ span {
 }
 
 .container form .input,.container input[type=text],.container input[type=password],.container input[type=e] {
+    font-family: 'Open Sans', sans-serif;
+    color: #081a26;
+    font-weight: 300;
+    padding: 3px 3px 3px 6px;
     background: #fbfbfb;
     font-size: 24px;
     line-height: 1;
     width: 100%;
-    padding: 3px;
     margin: 0 6px 5px 0;
     outline: none;
     border: 1px solid #d9d9d9;
@@ -196,3 +199,43 @@ nav {
     height: 100%;
 
 }
+/*выпадающий*/
+.dropbtn {
+    border: none;
+    background-color: #151115;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #c65712;}

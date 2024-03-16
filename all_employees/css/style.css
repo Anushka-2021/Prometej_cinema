@@ -1,9 +1,11 @@
 /*= ОБЩИЕ СТИЛИ
 	--------------------------------------------------------*/
 body {
-    background: #efefef;
+    background-image: url("../../signform/images/clouds.jpeg");
+    background-size: 100%;
     font-family: 'Open Sans', sans-serif;
-    color: #777;
+    color: #081a26;
+    margin: 0;
 }
 
 a {
@@ -22,7 +24,10 @@ table{
 
 }
 .mupdate {
-    margin: 80px auto 0;
+    margin-top: 80px;
+    margin-right: 80px;
+    margin-left: 80px;
+    padding-bottom: 13px;
 }
 .bloccenter {
     width: 50%;  /* Указывается необходимая ширина */
@@ -33,6 +38,11 @@ table{
     margin: auto;
     padding-bottom: 15px;
 }
+.regtext {
+    font-size: 13px;
+    margin-top: 26px;
+    color: #777;
+}
 /*= КОНТЕЙНЕРЫ
 --------------------------------------------------------*/
 .container {
@@ -40,6 +50,7 @@ table{
     overflow: hidden;
     text-align: center;
     height: auto;
+    border-radius: 5px;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
 }
@@ -50,25 +61,26 @@ table{
     width: 350px;
     height: auto;
     background: #fff;
+    border-radius: 5%;
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
 }
 .container h1 {
-    color: #777;
+    color: #081a26;
     text-align: center;
     border-bottom: 2px solid #f58220;
     font-weight: 300;
     margin-top: 13px;
 }
 .containerupd h1 {
-    color: #777;
+    color: #081a26;
     text-align: center;
-    border: 1px dashed #777;
     font-weight: 300;
+    border: 1px dashed #777;
     margin-top: 13px;
 }
-.containerupd form .input,.container input[type=text],.container input[type=password],.container input[type=e] {
+.containerupd form .input,.containerudp input[type=text],.containerudp input[type=password],.containerudp input[type=e] {
     background: #fbfbfb;
     font-size: 24px;
     line-height: 1;
@@ -116,3 +128,95 @@ footer {
     font-size: 12px;
     text-align: center;
     margin-top: 20px;}
+/* ШАПКА*/
+header {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #151115;
+    padding: 20px 10px;
+}
+.wrap-logo {
+    display: flex;
+    align-items: center;
+
+}
+header a {
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 4px;
+}
+
+header a.logo {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+header a:hover {
+    background-color: #c65712;
+    color: #212121;
+}
+
+header a.active {
+    background-color: #c65712;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+.round {
+    border-radius: 50px; /* Радиус скругления */
+    border: 3px solid white; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+}
+.bcgrnd{
+    width: 100%;
+    height: 100%;
+
+}
+/*выпадающий*/
+.dropbtn {
+    border: none;
+    background-color: #151115;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #c65712;}
