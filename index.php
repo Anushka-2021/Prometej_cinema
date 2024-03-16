@@ -65,6 +65,7 @@ else if(isset($_SESSION['signin_login'])){
                       <button class='dropbtn'>Управление</button>
                       <div class='dropdown-content'>
                         <a href='https://kr8/add_movie/' id='t3'>Добавить фильм</a>
+                        <a href='http://kr8/add_session/' id='t3'>Добавить сеанс</a>
                         <a href='https://kr8/registration'>Добавить сотрудника</a>
                         <a href='https://kr8/all_employees'>Список сотрудников</a>
                       </div>
