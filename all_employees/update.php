@@ -8,13 +8,36 @@ if($conn->connect_error){
 <html>
 <head>
     <title>Обновление</title>
+    <link rel="shortcut icon" href="../../signform/images/logo.jpg" type="image/jpg">
     <meta charset="utf-8" />
-    <link href="css/style.css" media="screen" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel='stylesheet' type='text/css'>
+    <link href="../../add_movie/css/style.css" media="screen" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="containerupd mupdate">
-    <div class="login">
+<header>
+    <div class='wrap-logo'>
+        <img class='round' src='../signform/images/logo.JPG' width = 60px>
+        <a href='' class='logo'>Кинотеатр Prometheus</a>
+    </div>
+    <nav>
+        <a href='http://kr8/'>Главная</a>
+        <a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
+        <a href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
+        <a href='https://kr8/add_client/' id='t3'>Добавить клиента</a>
+        <div class='dropdown'>
+            <button class='dropbtn'>Управление</button>
+            <div class='dropdown-content'>
+                <a href='https://kr8/add_movie/' id='t3'>Добавить фильм</a>
+                <a href='https://kr8/registration'>Добавить сотрудника</a>
+                <a href='https://kr8/all_employees'>Список сотрудников</a>
+            </div>
+        </div>
+        <a href='?exit=true'>Выйти</a>
+
+    </nav>
+</header>
+<div class="container mregister">
+    <div id="login">
 <?php
 // если запрос GET
 if($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["cashier_id"]))
@@ -32,12 +55,12 @@ if($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["cashier_id"]))
                     <h1>Обновление пользователя</h1>
                     <form method='post'>
                     <input class='input' type='hidden' name='cashier_id' value='$userid' />
-                    <p>Имя:
-                    <input class='input' type='text' name='name' value='$name' /></p>
-                    <p>Должность:
-                    <input class='input' type='text' name='post' value='$post' /></p>
-                    <p>Статус:
-                    <input class='input' type='number' name='status' value='$status' /></p>
+                    <p><label>Имя:
+                    <input class='input' type='text' name='name' value='$name' /></label></p>
+                    <p><label>Должность:
+                    <input class='input' type='text' name='post' value='$post' /></label></p>
+                    <p><label>Статус:
+                    <input class='input' type='number' name='status' value='$status' /></label></p>
                     <input class='button' type='submit' value='Сохранить'>
             </form>";
         }
