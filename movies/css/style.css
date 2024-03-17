@@ -257,12 +257,29 @@ nav {
 
 }
 .movie-dates{
-    border: 1px solid green;
+    border-radius: 15px; /* Радиус скругления */
+    border: 3px solid white; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
     display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
 }
 .movie-days-in-month{
-    border: 1px solid red;
     padding: 5px;
+}
+.session_date{
+    border-radius: 5px; /* Радиус скругления */
+    border: 3px solid white; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+    font-weight: 300;
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+}
+.href_session{
+    text-decoration: none;
 }
 .top-menu{
     display: inline-flex;
