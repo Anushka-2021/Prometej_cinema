@@ -47,7 +47,9 @@ if(isset($_GET['exit'])){
         echo mysqli_connect_error();  
     }    
     else {
-        $request = "SELECT *, tickets.ticket_id, tickets.session_id, tickets.seat_id, tickets.purchase_timedate, tickets.cost, tickets.paybon, seats.seat_num, seats.row_num, `sessions`.session_datetime, halls.name as hname, movies.name as mname, clients.name as cname, cashiers.name as wname
+        $request = "SELECT *, tickets.ticket_id, tickets.session_id, tickets.seat_id, tickets.purchase_timedate, 
+        tickets.cost, tickets.paybon, seats.seat_num, seats.row_num, `sessions`.session_datetime, 
+        halls.name as hname, movies.name as mname, clients.name as cname, cashiers.name as wname
         FROM tickets 
         LEFT JOIN seats ON tickets.seat_id=seats.seat_id
         LEFT JOIN `sessions` ON `sessions`.session_id=tickets.session_id
