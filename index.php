@@ -30,6 +30,7 @@ else if(isset($_SESSION['signin_login'])){
                     <a class='active' href='http://kr8/'>Главная</a>
                     <a href='https://kr8/movies/' id='t3'>Выбрать фильм</a>
                     <a href='https://kr8/show_tickets/' id='t3'>Посмотреть проданные билеты</a>
+                    <a href='https://kr8/add_employee/' id='t3'>Добавить клиента</a>
                     <a href='?exit=true'>Выйти</a>
                 </nav>
                 </header>

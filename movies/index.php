@@ -29,6 +29,14 @@
 
     <?php
     session_start();
+    if(isset($_GET['exit'])){
+        session_unset();
+        session_destroy();
+        ob_start();
+        header("refresh: 0, url=http://kr8/");
+        ob_end_clean();
+    }
+    else{
     $signin_login = $_SESSION['signin_login'];
     $signin_password = $_SESSION['signin_password'];
     $link = mysqli_connect("localhost", $signin_login, $signin_password, "kr_apge") or die();
@@ -38,20 +46,22 @@
             echo mysqli_connect_error();
         }
         else {
-            if(isset($_GET['client_id'])){
+            ob_start();
+            header("refresh: 3, url=http://kr8/movies");
+            ob_end_clean();
+            if($_GET['client_id'] != null){
                 $query1 = '
                             SELECT clients.email AS mail FROM clients
                             WHERE client_id = '.$_GET['client_id'];
                 $result1 = mysqli_query($link, $query1);
                 $a = mysqli_fetch_array($result1, MYSQLI_ASSOC);
                 $client_id = $_GET['client_id'];
-                ob_start();
-                header("refresh: 3, url=http://kr8/movies");
-                ob_end_clean();
+
             }
             else{
-                $client_id = Null;
+                $client_id = null;
             }
+
 
             $query2 = '
                             SELECT cashier_id AS id FROM cashiers
@@ -79,29 +89,36 @@
         $purchase_timedate = date("Y").'-'.date("m").'-'.date("d").' '.date("H").':'.date("i").':'.date("s");
         $cost = $_GET['price'];
         $paybon = 0; //add later $_GET['paybon']
-        $query4 = '
-                            INSERT INTO `tickets`(`cashier_id`, `client_id`, `session_id`, `seat_id`, `purchase_timedate`, `cost`, `paybon`)
-                            VALUES('.$cashier_id.','.$client_id.', '.$session_id.','.$seat_id.',"'.$purchase_timedate.'",'.$cost.','.$paybon.')';
+        if($_GET['client_id'] != null) {
+            $query4 = 'INSERT INTO `tickets`(`cashier_id`, `client_id`, `session_id`, `seat_id`, `purchase_timedate`, `cost`, `paybon`)
+                    VALUES(' . $cashier_id . ',' . $client_id . ', ' . $session_id . ',' . $seat_id . ',"' . $purchase_timedate . '",' . $cost . ',' . $paybon . ')';
+        }
+        else{
+            $query4 = 'INSERT INTO `tickets`(`cashier_id`, `session_id`, `seat_id`, `purchase_timedate`, `cost`, `paybon`)
+                    VALUES(' . $cashier_id . ', ' . $session_id . ',' . $seat_id . ',"' . $purchase_timedate . '",' . $cost . ',' . $paybon . ')';
+        }
         if($paybon){
             $diff = -$cost;
         }
         else{
             $diff = $cost/10;
         }
-        $query5 = '
-                            UPDATE clients
-                            SET discount_points = discount_points+'.$diff.'
-                            WHERE client_id = '.$client_id
-        ;
-        $query6 = '
-                        INSERT INTO `reserved_seats`(`session_id`, `seat_id`)
-                        VALUES('.$session_id.','.$seat_id.')';
+        if($_GET['client_id'] != null) {
+            $query5 = 'UPDATE clients
+                   SET discount_points = discount_points+' . $diff . '
+                   WHERE client_id = ' . $client_id;
+            $result5 = mysqli_query($link, $query5);
+        }
+        $query6 = 'INSERT INTO `reserved_seats`(`session_id`, `seat_id`)
+                   VALUES('.$session_id.','.$seat_id.')';
         ;
         $result4 = mysqli_query($link, $query4);
-        $result5 = mysqli_query($link, $query5);
+
         $result6 = mysqli_query($link, $query6);
         //  $d = mysqli_fetch_array($result4, MYSQLI_ASSOC);
-        mail($a['mail'], 'Order', $cashier_id.','.$client_id.','.$session_id.','.$seat_id.',"'.$purchase_timedate.'",'.$cost.','.$paybon);
+        if($_GET['client_id'] != null) {
+            mail($a['mail'], 'Order', $cashier_id . ',' . $client_id . ',' . $session_id . ',' . $seat_id . ',"' . $purchase_timedate . '",' . $cost . ',' . $paybon);
+        }
     }
     else if(isset($_GET['ready'])){
         if($link == FALSE){
@@ -151,7 +168,8 @@
         }
         else {
             $query = '
-                            SELECT movies.name AS mname, sessions.session_datetime as dat, halls.name as hname, halls.row_amount as ramount, sessions.session_id as sess_id
+                            SELECT movies.name AS mname, sessions.session_datetime as dat, 
+                            halls.name as hname, halls.row_amount as ramount, sessions.session_id as sess_id
                             FROM sessions
                             LEFT JOIN movies ON movies.movie_id = sessions.movie_id
                             LEFT JOIN halls ON sessions.hall_id = halls.hall_id
@@ -218,7 +236,11 @@
         while ($row = mysqli_fetch_array($result)){
             $movie_name = $row['name'];
             $movie_id = $row['movie_id'];
-            $res_sessions = mysqli_query($link, "SELECT *, MONTH(DATE(session_datetime)) AS sess_month, DAY(DATE(session_datetime)) AS sess_day, SUBSTRING(SEC_TO_TIME(((TIME_TO_SEC(session_datetime)+30) DIV 60) * 60),1,5) AS sess_time, halls.name AS hall_name FROM `sessions` LEFT JOIN halls ON halls.hall_id=sessions.hall_id WHERE movie_id='{$movie_id}'");
+            $res_sessions = mysqli_query($link,  "SELECT *, MONTH(DATE(session_datetime)) AS sess_month, DAY(DATE(session_datetime)) AS sess_day, 
+                                                        SUBSTRING(SEC_TO_TIME(((TIME_TO_SEC(session_datetime)+30) DIV 60) * 60),1,5) AS sess_time, 
+                                                        halls.name AS hall_name FROM `sessions` 
+                                                        LEFT JOIN halls ON halls.hall_id=sessions.hall_id 
+                                                        WHERE movie_id='{$movie_id}'");
             $rs1 = $res_sessions;
             echo '
                             <div class = "movie">
@@ -297,7 +319,7 @@
                         ';
         }
         echo '</div>';
-    }
+    }}
     ?>
 </div>
 </body>

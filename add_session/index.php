@@ -10,8 +10,8 @@ if(isset($_GET['exit'])){
 
 else{
     session_start();
-    $signin_login = 'root';//$_SESSION['signin_login'];
-    $signin_password = '';//$_SESSION['signin_password'];
+    $signin_login = $_SESSION['signin_login'];
+    $signin_password = $_SESSION['signin_password'];
     $link = mysqli_connect("localhost", $signin_login, $signin_password, "kr_apge") or die();
 
     if($link == FALSE){
